@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <link rel="stylesheet" href="/styles/mainStyles.css">
+  <link rel="stylesheet" href="prism.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism-tomorrow.min.css" />
+  <style>
+  .row {
+    display: table;
+    width: 100%;
+}
+.col {
+  display: table-cell;
+  padding: 16px;
+  width: 45%;
+}
+  </style>
+</head>
+  <div class="bio" style="padding: 10px; border: 2px solid rgb(240, 202, 10); background-color: rgb(240, 202, 10);">
+    <img src="/images/animatedProfile.png" style="float:right;width:100px;height:100px; vertical-align: middle;"></img>
+        <h1>
+          Projects
+        </h1>
+    </div>
+  </div>
+  <!-- Navigation bar -->
+  <ul>
+    <li><a href="/index.html">Home</a></li>
+    <li><a class="active" href="/subpages/projects.html">Projects</a></li>
+    <li><a href="/subpages/experience.html">Experience</a></li>
+    <li><a href="/subpages/resume.html">Resume</a></li>
+    <li style="float:right"><a href="/subpages/aboutMe.html">About Me</a></li>
+  </ul>
+  <h1>   </h1>
+
+  <div style="padding-bottom: 100px;">
+  <!-- Bio -->
+  <div class="bio" style="padding: 10px; border: 2px solid rgb(240, 202, 10); background-color: rgb(240, 202, 10);">
+      <h1> <center> Welcome to My Gallery of Projects </center> </h1>
+      <h2>
+        Here are some of the various projects that I have completed in my free time. I enjoy taking skills that I learn and take them and  use them in my own applications. This helps me to understand contents and tool on a deeper level rather what is taught at the surface level. I am always working on new projects so stop back in every  once and awhile to check in on new projects. Feel free to reach out to discuss any of the projects displayed or and ideas of possible projects. 
+      </h2>
+    </div>
+
+    <div class="col-container" style="padding: 10px;">
+      <div class="col" style="background: #aaa; padding-right: 10px;">
+        <h2>The Simpsons</h2>
+        <div>
+          <img src="/images/simpsons.png" alt="The Simpsons Family" class="projectImage"/>
+        </div>
+        <!-- Trigger/Open The Modal -->
+        <div>
+          <h3 style="text-align: left;">
+            The Simpsons is a tv show with over 30 different seasons, starting back in 1989. Not all episodes
+            are great ones, but not every episode is bad either. There are a lot of different reasons why any
+            TV show is a success or a failure. Being able to further examine this data, I would want to get a
+            generalized algorithm of a good Simpsons episode. Some of the variables I would use and examine
+            are as followed. Ratings by IMDB ratings to views would be a baseline for the success of each
+            episode. I would also look at if any decade of production date or season is better than the other.
+            I want to see if certain characters in the show affect the ratings and views. I would also like to
+            try to find a trend in when different characters talk within each episode as well.
+          </h3>
+          <button class="modal-button" href="#myModal1" style="float: right;">See the Code</button>
+        </div>
+  
+        <!-- The Modal -->
+        <div id="myModal1" class="modal">
+  
+          <div class="modal-content">
+            <div class="modal-header">
+              <span class="close">×</span>
+              <h2>An Analytical Study of the Simpsons TV Show</h2>
+            </div>
+  
+            <div class="modal-body">
+              <p>Some text in the Modal Body</p>
+            </div>
+            <div class="modal-body" style="position: relative; height: 100%">
+  
+              <iframe src="/projects/SimpsonsProject.html" width="100%" ; height="100%" ; background-color="black;" ;
+                overflow-y="scroll" ;x>
+              </iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <div class="col" style="background:#bbb">
+        <h2>Ticket to Ride</h2>
+      <div>
+        <img src="/images/pic38668.webp" alt="The Simpsons Family" class="projectImage" />
+      </div>
+      <h3 style="text-align: left; padding: 5px;">
+        While at Eastern, I was introduced to the “Ticket to Ride” board game. This board
+        game is full of strategy, a board I grew to enjoy playing. Ticket to Ride is a
+        cross-country train adventure in which players collect and play matching train
+        cards to claim railway routes connecting cities throughout North America. The
+        longer the routes, the more points they earn.
+      <br>
+        In the fall semester of 2022, I took a Data Structures class, and in this class
+        I learned how properly create my own class to make consisting of the attribute
+        that my up a player in the game. This can be used to help store the information
+        of a game. This program has the ability to calculate the end results of the game a
+        s well.
+
+      </h4>
+
+      <!-- Trigger/Open The Modal -->
+      <button class="modal-button" href="#myModal2" style="float: right;">See the Code</button>
+
+      <!-- The Modal -->
+      <div id="myModal2" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+          <div class="modal-header">
+            <span class="close">×</span>
+            <h2>A Ticket to Ride Calculator</h2>
+          </div>
+          <div class="modal-body">
+           <h3>    </h3>
+          </div>
+        <pre>
+        <h3 style="padding-top: 10px;">Implementation file</h3>
+            <code class="language-java" style="background-color: black; padding: 5px;">
+  import java.util.*;
+  public class totPlayer{
+      // Data members
+      protected String name;
+      protected String trainColor;
+      protected int totalTrains = 45;
+      protected int totalPoints = 0; 
+      protected int totRoutes; 
+      List< String > trainColors = Arrays.asList("red", "yellow", "blue", "black", "green");
+  
+      // Constructor
+      public totPlayer(String newName, String newTColor, int newRoutes){
+          name = newName;
+          trainColor = newTColor; 
+          totRoutes = newRoutes;
+      }
+  
+      // Access to the number of trains a player has
+      public int getTrains(){
+          return totalTrains; 
+      }
+  
+      // Adding routes toe the players, with the parameter being the number of routes the player is keeping
+      public void incRoutes(int numOfRoutes){
+          totRoutes += numOfRoutes;
+      }
+  
+      public void incPoints(int num){
+          totalPoints += num; 
+      }
+  
+      public void decPoints(int num){
+          totalPoints -= num; 
+      }
+  
+      // Giving the play pointts based on the number of trains placed
+      public void incTrainPoints(int num) throws totException{
+          switch (num){
+              case 1:
+                  totalPoints += 1;
+                  totalTrains -= 1;
+              case 2:
+                  totalPoints += 2;
+                  totalTrains -= 2;
+              case 3:
+                  totalPoints += 4;
+                  totalTrains -= 3;
+              case 4:
+                  totalPoints += 7;
+                  totalTrains -= 4;
+              case 5:
+                  totalPoints += 10;
+                  totalTrains -= 5;
+              case 6:
+                  totalPoints += 15;
+                  totalTrains -= 6;
+              default:
+                  /* throw exception 
+                    * this will call and throw the exception to the console*/
+                    throw new totException("This is not a valid amount of trains.");
+              
+          }
+      }
+      
+  
+      // Print scoreboard return it and not print it in this function via toString Method
+      @Override
+      public String toString(){
+          // to make sure the gammar is orrect lets determine the plurality of words is right
+          String trains = totalTrains == 1? " train" : " trains";
+          String points = totalPoints == 1? " point" : " points";
+          String routes = totRoutes == 1? " route" : " routes"; 
+          // This is going to return info about the current standings of a player
+          return (name + " is the conductor of the " + trainColor + " trains and has  " + totalTrains +  trains + "left, giving them " + totalPoints + points + ", and " + totRoutes + routes+ ".");
+      }
+  
+  }
+            </code>
+        </pre>
+        <pre>
+            <h3>Test File Code</h3>
+            <code class="language-java" style="background-color: black; padding: 5px;">
+  // Importing the Scanner class
+  import java.util.*;
+  
+  public class torTest{
+  
+      public static void main(String[] args) throws totException{
+          // Data members
+          String name, color;
+          int routes;  
+          // Possible trains
+          ArrayList< String > trainColors = new ArrayList(5);
+          trainColors.add("red");
+          trainColors.add("black");
+          trainColors.add("blue");
+          trainColors.add("yellow");
+          trainColors.add("Green"); 
+  
+          // asking the user how many people are playing
+          int numOfPlayers = getNum("Enter the number of players: ");
+  
+          // initialize an array to hold all of the players
+          totPlayer [] players =  new totPlayer[numOfPlayers];
+  
+          // for loop to create a "player" object for each person playing
+          for (int i = 0; i < numOfPlayers; i++){
+              // asking for input to make a new player of the torPlayer class
+              name = getString("Enter a player's Name: ");
+              // asking the user for a trains color
+              color = getString("Enter their train color: "); 
+              // Making sure the user enters a valid train color
+              while (trainColors.contains(color) == false){
+                  color = getString("Sorry, that color is not available, Enter another color: ");
+              } 
+              trainColors.remove(trainColors.indexOf(color)); 
+              routes = getNum("Enter the number of routes they are starting with:");
+              // need to figure out the best way to validate the user input
+  
+              // Creating the player of the torPlayer class   
+              totPlayer person = new totPlayer(name, color, routes); 
+              // Adding the player to the array to reference the players later
+              players[i] = person; 
+          }
+          
+          for (int i = 0; i < numOfPlayers; i++){
+              System.out.println(players[i].toString());
+          } 
+          /* Calculator */
+          // Trains placed
+          for (int i = 0; i < numOfPlayers; i++){
+              routePoints(players[i]);
+          } 
+          players[0].incPoints(5);
+          // Printing the new player standings 
+          for (int i = 0; i < numOfPlayers; i++){
+              System.out.println(players[i].toString());
+          } 
+  
+          // Trains cars layed 
+          for (int i = 0; i < numOfPlayers; i++){
+              trainPoints(players[i]);
+          }
+        
+          // Printing the new player standings 
+          for (int i = 0; i < numOfPlayers; i++){
+              System.out.println(players[i].toString());
+          } 
+  
+      }
+  
+      // two different input functions to be able to get both ints and strings from the user to use throughout the game
+      public static int getNum(String prompt){
+          // Creating a new scanner object to take in input
+          Scanner obj = new Scanner(System.in);
+  
+          // Asking the user for input as an int
+          System.out.print(prompt + ": ");
+          String num = obj.nextLine();
+  
+          // converting the string to an int 
+          int theNum = Integer.parseInt(num); 
+  
+          // returning the number back to the main function
+          return theNum;
+      }
+  
+      // A String it needs a paramter of what it is asking for as the parameter
+      public static String getString(String prompt){
+          Scanner obj = new Scanner(System.in);
+  
+          // Asking the user for input as an string
+          System.out.print(prompt + ": ");
+          String theItem = obj.nextLine();
+  
+          // returning the item asked for back to the main function
+          return theItem;
+      }
+      public static void routePoints(totPlayer person) throws totException {
+        // Routes finished
+        String setOfNums = getString("Enter the number of finished route points: ");
+        String[] arrOfnums = setOfNums.split(",");
+      
+        int total = 0;
+        for (int i=0; i < arrOfnums.length; i++) {
+            total += Integer.parseInt(arrOfnums[i]);
+        }
+        person.incPoints(total);
+        
+          // Routes finished
+        setOfNums = getString("Enter the number of unfinished route points: ");
+        arrOfnums = setOfNums.split(",");
+        
+        total = 0;
+        for (int i=0; i < arrOfnums.length; i++) {
+            total += Integer.parseInt(arrOfnums[i]);
+        }
+        person.decPoints(total);
+    } 
+
+    public static void trainPoints(totPlayer person) throws totException{
+        int num = 1; 
+        while (num != 0){
+            num = getNum("Enter a set of trains placed, (Enter 0 to stpp giving entries.");
+            person.incTrainPoints(num);
+        }
+    }
+
+  }
+           </code>
+        </pre>
+      </div>
+    </div>
+      </div>
+    </div>    
+
+ 
+
+
+<!-- Footer -->
+<div class="footer" style = "height: 10; padding-top: 10px;">
+  <h3>
+    While going through this website, feel free to contact me with a questions ar concerns.  I would love to take the time to get to know you
+    and possibly work along side of you one day
+    <br>
+    <a href="mailto:Cwc09262@gmail.com">
+   <button class="modal-button"  href="mailto:Cwc09262@gmail.com">
+    Send Email
+   </button>           
+    </a> 
+  </h3>
+  <h4>
+    This website has been created and is managed by Caden W. Coutz 
+  </h4>
+</div>
+  </div>
+  </div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+  <script src="/prism.js"></script>
+  <script>
+
+
+    hljs.initHighlightingOnLoad();
+    // Register <code-tab> element
+    class CodeTab extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({ mode: "open" });
+      }
+      connectedCallback() {
+        // The Shadow DOM HTML for a <code-tab> element.
+        this.shadowRoot.innerHTML = `
+       <!-- we'll put styles here later -->
+       <div class="code-snippet">
+           The web component is working if you can see this text.
+       </div>
+        `
+      }
+    }
+    window.customElements.define("code-tab", CodeTab);
+
+    // Get the button that opens the modal
+    var btn = document.querySelectorAll("button.modal-button");
+
+    // All page modals
+    var modals = document.querySelectorAll('.modal');
+
+    // Get the <span> element that closes the modal
+    var spans = document.getElementsByClassName("close");
+
+    // When the user clicks the button, open the modal
+    for (var i = 0; i < btn.length; i++) {
+      btn[i].onclick = function (e) {
+        e.preventDefault();
+        modal = document.querySelector(e.target.getAttribute("href"));
+        modal.style.display = "block";
+      }
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    for (var i = 0; i < spans.length; i++) {
+      spans[i].onclick = function () {
+        for (var index in modals) {
+          if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";
+        }
+      }
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target.classList.contains('modal')) {
+        for (var index in modals) {
+          if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";
+        }
+      }
+    }
+    hljs.initHighlightingOnLoad();
+
+    $(function () {
+      $.ajax({
+        type: 'GET',
+        url: '/api/1/strategy/source/json/{{ name }}',
+        dataType: "json",
+
+        success: function (response) {
+          console.log(response);
+          $("#sourcecode").html(response);
+          $('pre code').each(function (i, block) {
+            hljs.highlightBlock(block);
+          });
+        }
+      });
+    });
+  </script>
+  <script src="prism.js"></script>
+  </body>
+
+</html>
