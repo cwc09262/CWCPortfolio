@@ -188,8 +188,8 @@ cursor: pointer;
 
 .modal-header {
 padding: 2px 16px;
-background-color: #5cb85c;
-color: white;
+background-color: rgb(240, 202, 10);
+color: rgb(0, 0, 0);
 position: fixed;
 width: 80%;
 
