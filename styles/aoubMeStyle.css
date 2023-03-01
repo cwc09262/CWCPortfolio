@@ -24,7 +24,6 @@
   height: auto;
   width: 100%;
   opacity:0;
-  background-color: ;
   margin-left: auto;
   margin-right: auto;
   display: block;
@@ -48,6 +47,7 @@
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+  width: 80%;
 }
 
 /* putting the images in a table like form */
