@@ -42,7 +42,7 @@
 
     <h1> </h1>
 
-    <section style="padding-bottom: 100px; padding: 50px;">
+    <section style="padding-bottom: 100px; padding: 50px; z-index: -100;">
       <div class="container py-5">
         <div class="row">
           <div class="col-md-12">
@@ -64,15 +64,23 @@
                       <h3 class="title h4" style=" font-size: 20px;">Cyber Security Intern</h3>
                       <h4 class="subtitle">May 2023 - July 2022</h5>
                         <p class="description">
-                          One of the big components of my research this summer was gathering different information about cyber hygiene of ships. One of my mentors, Brendan Dolan was able to take the photo above as we were on a container ship. This information was being gathered to have a better understanding of how cyber security is conducted in the Maritime. The information was being used in order to develop a full scale cyber attack on USCG Sector New York and their area of responsibility. The facilities were the main target for the Cyber Security exercises, that is being conducted in October of 2023, but it is also important for the Coast Guard and the other ports in the harbor because a port can. Only be as safe as the vessel that is coming in. My research and findings lead to a real life modeled cyber attack scenario which is leading or has lead to a successful cyber security exercise. Essentially all of the USCG Sector New York is benefiting from this as well as the whole harbor of New York, all the way up to Albany, NY. Click down to read my final report of kmy internship!</p>
+                          One of the big components of my research this summer was gathering different information about
+                          cyber hygiene of ships. One of my mentors, Brendan Dolan was able to take the photo above as
+                          we were on a container ship. This information was being gathered to have a better
+                          understanding of how cyber security is conducted in the Maritime. The information was being
+                          used in order to develop a full scale cyber attack on USCG Sector New York and their area of
+                          responsibility. The facilities were the main target for the Cyber Security exercises, that is
+                          being conducted in October of 2023, but it is also important for the Coast Guard and the other
+                          ports in the harbor because a port can. Only be as safe as the vessel that is coming in. My
+                          research and findings lead to a real life modeled cyber attack scenario which is leading or
+                          has lead to a successful cyber security exercise. Essentially all of the USCG Sector New York
+                          is benefiting from this as well as the whole harbor of New York, all the way up to Albany, NY.
+                        </p>
                         <div class="icon"><span></span></div>
-                        <center>
-                          <button class="modal-button">Click Here</button>
-                        </center>
+                        </div>
                     </div>
                   </div>
                 </div>
-              </div>
 
               <div class="timeline">
                 <div class="timeline-content">
@@ -184,8 +192,82 @@
       This website has been created and is managed by Caden W. Coutz
     </h3>
   </div>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js"></script>
+  <script src="/prism.js"></script>
+  <script>
 
+    hljs.initHighlightingOnLoad();
+    // Register <code-tab> element
+    class CodeTab extends HTMLElement {
+      constructor() {
+        super();
+        this.attachShadow({ mode: "open" });
+      }
+      connectedCallback() {
+        // The Shadow DOM HTML for a <code-tab> element.
+        this.shadowRoot.innerHTML = `
+       <!-- we'll put styles here later -->
+       <div class="code-snippet">
+           The web component is working if you can see this text.
+       </div>
+        `
+      }
+    }
+    window.customElements.define("code-tab", CodeTab);
+
+    // Get the button that opens the modal
+    var btn = document.querySelectorAll("button.modal-button");
+
+    // All page modals
+    var modals = document.querySelectorAll('.modal');
+
+    // Get the <span> element that closes the modal
+    var spans = document.getElementsByClassName("close");
+
+    // When the user clicks the button, open the modal
+    for (var i = 0; i < btn.length; i++) {
+      btn[i].onclick = function (e) {
+        e.preventDefault();
+        modal = document.querySelector(e.target.getAttribute("href"));
+        modal.style.display = "block";
+      }
+    }
+
+    // When the user clicks on <span> (x), close the modal
+    for (var i = 0; i < spans.length; i++) {
+      spans[i].onclick = function () {
+        for (var index in modals) {
+          if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";
+        }
+      }
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+      if (event.target.classList.contains('modal')) {
+        for (var index in modals) {
+          if (typeof modals[index].style !== 'undefined') modals[index].style.display = "none";
+        }
+      }
+    }
+    hljs.initHighlightingOnLoad();
+
+    $(function () {
+      $.ajax({
+        type: 'GET',
+        url: '/api/1/strategy/source/json/{{ name }}',
+        dataType: "json",
+
+        success: function (response) {
+          console.log(response);
+          $("#sourcecode").html(response);
+          $('pre code').each(function (i, block) {
+            hljs.highlightBlock(block);
+          });
+        }
+      });
+    });
+  </script>
 </body>
-
 
 </html>
