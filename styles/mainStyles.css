@@ -40,6 +40,13 @@ li a:hover {
   font-size: 10pt;
 
 }
+.columns {
+  display: inline-block;
+  width: 19%; /* Adjust the width as needed */
+  vertical-align: top;
+  margin-right: 2%; /* Add some margin between columns */
+}
+
 
 .homeImage{
   vertical-align: middle;
