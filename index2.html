@@ -7,21 +7,64 @@
   <link href="/fcf-assets/css/fcf.default.css" rel="stylesheet">
   <link rel="icon" href="/images/animatedProfile.png">
   <style>
-    img {
-      height: 100%;
+    /* Define styles for the row bio */
+    .row.bio {
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+      background-color: #f0f0f0;
     }
 
-    .container {
-      width: 80%;
-      margin: 0 auto;
-      margin-top: 60px;
+    /* Define styles for the column container */
+    .col-container {
+      display: flex;
+      justify-content: space-between;
+      max-width: 1200px;
+      width: 100%;
     }
 
-    .picture {
-      height: auto;
-      float: left;
-      padding-right: 30px;
+    /* Define styles for individual columns */
+    .col {
+      flex: 1;
+      padding: 20px;
+      background-color: #fff;
+      margin: 10px;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
+
+    /* Style the image container */
+    .img-container {
+      max-width: 300px;
+      /* Adjust the image container width as needed */
+      margin-right: 20px;
+      /* Add spacing between the image and text columns */
+      text-align: center;
+      /* Center the content (image) within the container */
+    }
+
+    /* Style the course columns */
+    .course-column {
+      flex: 1;
+    }
+
+    /* Style headings */
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    h3 {
+      font-size: 18px;
+      margin: 5px 0;
+    }
+
+    /* Style the passions and closing paragraphs */
+    p {
+      margin-top: 10px;
+    }
+
+    /* Add additional styles as needed */
   </style>
 </head>
 
@@ -48,72 +91,60 @@
   <h3> </h3>
   <h3> </h3>
   <h3> </h3>
-<body>
-  <div class="bio" style="padding: 10px;">
-    <div class="row">
-      <div class="container" style="padding: 60px;">
-        <img src="/images/StandingPortrait.png" alt="" class="picture">
-        <h2>
-          About Me:
-        </h2>
-        <h2><strong>Current Enrollment:</strong> Junior at Eastern University</h2>
-        <h2><strong>Academic Interests:</strong> Computer Science and Data Science</h2>
-        <h2><strong>Pursuing a Bachelor of Science degree in both fields</strong></h2>
-        <h2><strong>Planning to obtain a minor in Mathematics</strong></h2>
-        <h2><strong>Commitment to building a diverse skill set for a tech career</strong></h2>
-        <p>
-          Eastern University is a private, Christian university located in St. Davids, Pennsylvania, United States. It was founded in 1952 and is affiliated with the American Baptist Churches USA. The university offers a wide range of undergraduate and graduate degree programs in fields such as business, education, nursing, psychology, and theology. It has a strong emphasis on experiential learning and service, and encourages students to get involved in mission trips and service projects both on and off campus. Eastern University is accredited by the Middle States Commission on Higher Education.
-        </p>
-        <p>
-          I am also a resident assistant at Eastern University, where I am able to use my skills and passions in building community and creating safe spaces for others to live in. I have a passion to help make their lives easier.
-        </p>
-      </div>
-    </div>
-  </div>
 
-  <div class="row bio" style="padding: 10px;">
-    <div class="container">
-      <img src="/images/easternLogo2.png" alt="" class="picture" style="float: right;">
-      <div class="columns">
-        <h2>
-          Academic Journey:
-        </h2 class = "columns">
-        <h2><strong>Completed Courses:</strong></h2>
-        <p><strong>Calculus 1 and 2</strong></p>
-        <p><strong>Discrete Mathematics (logic-based math)</strong></p>
-        <p><strong>Python programming language</strong></p>
-        <p><strong>C++ with Object-Oriented skills</strong></p>
-        <p><strong>Introductory Data Science in Python</strong></p>
-      </div>
-      <div class="columns">
-        <h2><strong>Upcoming Courses (2022-2023):</strong></h2>
-        <p><strong>Data Structures (Java)</strong></p>
-        <p><strong>Statistics for Data Science</strong></p>
-        <p><strong>Teaching Assistant for Introductory Python course</strong></p>
-      </div>
-      <div class="columns">
-        <h2><strong>Future Courses (Spring 2023):</strong></h2>
-        <p><strong>Databases Course</strong></p>
-        <p><strong>Analysis of Algorithms (400 level)</strong></p>
-        <p><strong>Operating Systems course</strong></p>
-        <p><strong>Data Science course (learning R)</strong></p>
-        <p><strong>Teaching Assistant for another Computer Science course</strong></p>
-        <p>
-          Passionate about working alongside others to complete projects.
-        </p>
-      </div>
-      <div class="columns">
-        <h2>
-          Closing:
-        </h2>
-        <p>
-          Excited about the opportunity to work with your company. Dedicated and passionate about the work. Grateful for your time and consideration.
-        </p>
+  <body>
+    <div class="bio" style="padding: 10px;">
+      <div class="row">
+        <div class="container" style="padding: 60px; align-items: center;">
+          <img src="/images/berksBestShot copy 2.png" alt="" class="picture" style="float:left;">
+          <br>
+          <br>
+          <h1 style="text-decoration: underline;">
+            About Me:
+          </h1>
+          <h3><strong>Current Enrollment:</strong> Junior at Eastern University</h3>
+          <h3><strong>Academic Interests:</strong> Computer Science and Data Science</h3>
+          <h3><strong>Pursuing a Bachelor of Science degree in both fields</strong></h3>
+          <h3><strong>Planning to obtain a minor in Mathematics</strong></h3>
+          <h3><strong>Commitment to building a diverse skill set for a tech career</strong></h3>
+        </div>
       </div>
     </div>
-  </div>
-  
+    <div class="row bio">
+      <div class="col-container">
+        <div class="col img-container">
+          <img src="/images/easternLogo2.png" alt="" class="picture">
+        </div>
+        <div class="col course-column">
+          <h2><strong>Completed Courses:</strong></h2>
+          <h3>Calculus 1 and 2</h3>
+          <h3>Discrete Mathematics (logic-based math)</h3>
+          <h3>Python programming language</h3>
+          <h3>C++ with Object-Oriented skills</h3>
+          <h3>Introductory Data Science in Python</h3>
+          <h2><strong>Upcoming Courses (2022-2023):</strong></h2>
+          <h3>Data Structures (Java)</h3>
+          <h3>Statistics for Data Science</h3>
+          <h2>Teaching Assistant for Introductory Python course</h2>
+        </div>
+        <div class="col course-column">
+          <h2><strong>Future Courses (Spring 2023):</strong></h2>
+          <h3>Databases Course</h3>
+          <h3>Analysis of Algorithms (400 level)</h3>
+          <h3>Operating Systems course</h3>
+          <h3>Data Science course (learning R)</h3>
+          <h3>Teaching Assistant for another Computer Science course</h3>
+          <p><strong>Passions:</strong> Passionate about working alongside others to complete projects.</p>
+          <h2><strong>Closing:</strong></h2>
+          <p>Excited about the opportunity to work with your company. Dedicated and passionate about the work. Grateful
+            for your time and consideration.</p>
+        </div>
+      </div>
     </div>
-  </div>
-</body>
+
+
+    </div>
+    </div>
+  </body>
+
 </html>
