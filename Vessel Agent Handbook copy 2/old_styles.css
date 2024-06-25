@@ -1,0 +1,145 @@
+
+
+.bodyText {
+    width: 90%;
+    font-size: 18px;
+}
+
+.bodyText h1 {
+    font-size: 80;
+}
+.bodyText h2{
+    margin-top: 50px;
+}
+
+.contact-header {
+    text-align: center;
+    color: #fff;
+    background-color: #333;
+    padding: 10px 0;
+    margin: 0;
+}
+
+.container {
+    display: flex;
+    justify-content: space-around;
+    margin: 10px auto;
+    max-width: 800px;
+}
+
+.column {
+    flex: 1;
+    margin: 0 10px;
+}
+
+.card {
+    background-color: #1760a2ff;
+    color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    /* Horizontal offset, vertical offset, blur radius, spread radius, color */
+
+}
+
+.card h1, h2, h3 {
+    margin-bottom: 5px;
+}
+
+.card a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.2em;
+    display: inline-block;
+}
+
+.card a:hover {
+    text-decoration: underline;
+}
+
+.divider {
+    background-color: white;
+    height: 2px;
+    width: 75%;
+    margin: 0 auto;
+    margin-bottom: 10PX;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    /* Align items to the top */
+    gap: 20px;
+    /* Space between columns */
+}
+
+.flex-item {
+    flex: 1;
+}
+
+.table-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+.left-column {
+    width: 70%;
+    text-align: right;
+    padding-right: 10px;
+    
+}
+.right-column {
+    text-align: left;
+    padding-left: 10px;
+}
+.center-table {
+    width: 100%;
+    max-width: 1200px; /* Adjust this value to control the max width */
+}
+ .right-column a{
+    text-decoration: underline;
+ }
+
+ td {
+    padding: 10px;
+ }
+ 
+
+ .card {
+    width: 75%;
+    margin: 0 auto;
+}
+
+.diffRow {
+    display: flex;
+    align-items: flex-start;
+    padding: 10px;
+}
+
+.left{
+    text-align: right;
+    width: 30%;
+    padding-right: 10px;
+
+}
+
+.left h3{
+    margin-top: 0;
+    padding-top: 0;
+    text-decoration: underline;
+}
+.right{
+    text-align: left;
+    line-height: 30px;
+    margin: 10px;
+    margin-top: 0;
+    width: 70%;
+}
+
+.right a{
+    font-size: 18px;   
+}

@@ -1,0 +1,427 @@
+/* Base styles */
+body,
+html {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    /* Prevent horizontal scrolling */
+    width: 100%;
+    /* Ensure viewport does not overflow horizontally */
+    min-height: 100%;
+}
+
+/* Styling for the header */
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 0;
+    padding-top: 10px;
+    padding-bottom: 0;
+    background-color: rgb(244, 244, 244);
+}
+
+/* Styling for the logo */
+header img {
+    width: 100%;
+}
+
+nav {
+    margin-left: 0;
+    padding-left: 0;
+    align-items: left;
+    width: 100%;
+    padding: 0;
+}
+
+.navbar,
+.breadcrumb,
+.subhead h1 {
+    margin-left: 10%;
+    padding-left: 10%;
+}
+
+.navbar {
+    display: flex;
+    background-color: #1760a2;
+    height: 40px;
+    /* This prevents unnecessary overlap or color bleeding. */
+    width: 100%;
+    bottom: 0;
+    margin-bottom: 0;
+    z-index: 2;
+
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbar a {
+    font-size: 14px;
+    color: white;
+    text-align: left;
+    padding: 12px 12px;
+    text-decoration: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+    padding-left: 0px;
+    margin-left: 0;
+}
+
+
+.subnav {
+    position: relative;
+    /*  to align the dropdown content to the left of the main button. */
+}
+
+.subnav .subnavbtn {
+    font-size: 14px;
+    border: none;
+    outline: none;
+    color: white;
+    padding: 11px;
+    background-color: inherit;
+    font-family: inherit;
+    margin: 0;
+}
+
+.subnav-content {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    background-color: #0087BE;
+    color: black;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    left: 0;
+    /* Align to the left under the main button */
+    transition: all 0.3s ease;
+}
+
+.subnav-content a {
+    display: inline-block;
+    padding: 7px;
+    margin: 5px;
+    text-decoration: none;
+    text-align: left;
+    white-space: nowrap;
+    /* Prevent text from wrapping */
+    transition: all 0.3s ease;
+}
+
+
+.subnavbtn.active,
+.navbar a.active {
+    background-color: #333;
+}
+
+.subnav-content a:hover,
+.subnav button:hover,
+.subnav:hover,
+.subnavbtn:hover {
+    background-color: #01447e;
+    color: white;
+    /* Smooth transition */
+}
+
+
+
+.subnav:hover .subnav-content {
+    display: flex;
+    align-items: left;
+    transition: all 0.3s ease;
+}
+
+/* New styles to keep the subnavbtn black when subnav is hovered */
+.subnav:hover .subnavbtn {
+    background-color: #0087BE;
+    color: white;
+    transition: all 0.3s ease;
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+
+.sticky+.content {
+    padding-top: 60px;
+}
+
+i {
+    margin-left: 5px;
+}
+
+main {
+    width: 80%;
+}
+
+.breadcrumb {
+    padding-left: 0;
+    top: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 5px;
+}
+
+ul.breadcrumb {
+    list-style: none;
+}
+
+ul.breadcrumb li {
+    display: inline;
+    font-size: 14px;
+}
+
+ul.breadcrumb li+li:before {
+    padding: 8px;
+    font-size: 20px;
+    color: black;
+    content: "\203A";
+}
+
+ul.breadcrumb li a {
+    color: #0275d8;
+    text-decoration: none;
+}
+
+ul.breadcrumb li a:hover {
+    color: #01447e;
+    text-decoration: underline;
+}
+
+.subhead {
+    position: relative;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.subhead h1 {
+    padding-top: 0;
+    margin-top: 0;
+    position: absolute;
+    text-decoration: underline;
+    top: 35%;
+    /* Adjust left positioning of the heading */
+    color: #333;
+    /* Adjust text color for better visibility */
+    margin: 0;
+    /* Remove default margin */
+    z-index: 1;
+    /* Ensure the heading is above the image */
+    font-size: 40px;
+}
+
+.subhead img {
+    margin-right: 10px;
+    /* Adds space on the left to move the image to the right */
+    padding-right: 0px;
+    /* Adjust padding-right to balance the movement */
+    width: 98%;
+    /* Ensures the image width adjusts naturally instead of taking 100% of the container */
+    max-width: 100%;
+    /* Ensures the image doesn't overflow the container */
+    display: block;
+    /* Ensures the image behaves as a block element */
+    height: 75px;
+}
+
+.bodyText {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-left: 15%;
+    padding-top: 20px;
+}
+
+
+.left {
+    width: 30%;
+    padding-right: 50px;
+}
+
+.right {
+    width: 70%;
+    padding: 15px;
+}
+
+/* Media query for smaller screens */
+@media screen and (max-width: 1000px) {
+    .bodyText {
+        flex-direction: column;
+        align-items: center;
+    }
+    .vertical-menu{
+        margin-left: 0;
+        padding: 0;
+        float: center;
+        align-items: center;
+    }
+
+    .left{
+        width: 60%;
+    }
+
+    .custom-card{
+        align-items: center;
+        width: 100%;
+        padding-top: 50px;
+    }
+
+    
+    .diffRow .left{
+        padding-right: 10px;
+    }
+    
+}
+
+.vertical-menu {
+    margin-top: 0;
+    margin-left: 10px;
+    width: 250px;
+}
+
+.vertical-menu a {
+    background-color: #e7e7e7;
+    /* Grey background color */
+    color: #1760a2ff;
+    /* Black text color */
+    margin-bottom: 2px;
+    display: block;
+    /* Make the links appear below each other */
+    padding: 8px;
+    font-size: 14px;
+    text-decoration: none;
+    /* Remove underline from links */
+    box-shadow: 0 4px 4px -4px black;
+    /* Bottom shadow */
+    transition: all 0.3s ease;
+    /* Smooth transition */
+
+}
+
+.vertical-menu a:hover {
+    text-decoration: underline;
+
+    transition: all 0.3s ease;
+    /* Smooth transition */
+}
+
+.vertical-menu a.active {
+    background-color: #333;
+    color: white;
+}
+
+.custom-card .right p{
+    padding-top: 0;
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+/* Shadow on items in body of the pages*/
+.contact-card,
+.card {
+    box-shadow: 0px 0px 5px 0px black
+}
+
+/* Point of Contact Card */
+.contact-card {
+    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 30px;
+    /* For space between the vertical menu and the contact card */
+}
+
+.contact {
+    background-color: #333;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 10%;
+    color: white;
+    text-align: center;
+    line-height: 1.6;
+    padding-left: 20px;
+}
+
+.contact-card h2 {
+    padding: 10px;
+    text-decoration: underline;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.contact h3,
+.contact a {
+    color: white;
+    text-align: center;
+    text-decoration: underline;
+}
+
+.contact h3{
+    padding-bottom: 0;
+    margin-bottom: 5px;
+    font-size: 24px;
+}
+
+.contact a{
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.contact h4 {
+    color: white;
+    padding-bottom: 5px;
+    margin: 0;
+    text-align: center;
+}
+
+
+/* Body Stuff */
+.custom-card .card {
+    width: 50%;
+    margin: 0 auto;
+    background-color: #1760a2ff;
+    color: white;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.custom-card .diffRow {
+    display: flex;
+    align-items: flex-start;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.custom-card .left {
+    margin-top: 0;
+    text-align: right;
+    width: 20%;
+    padding-right: 10px;
+    font-size: 20px;
+}
+
+.custom-card .left h3 {
+    padding-top: 0;
+    margin-top: 0;
+    }
+
+.custom-card .right {
+    text-align: justify;
+    line-height: 30px;
+    margin: 10px;
+    margin-top: 0;
+    padding-top: 0;
+    padding-right: 0;
+    margin-right: 0;
+    width: 80%;
+    font-size: 20px;
+}
+
+.custom-card .right a {
+    color: #1760a2ff;
+    font-size: 20px;
+}
